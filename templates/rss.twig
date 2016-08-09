@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Ahmad Samiei</title>
+        <link>http://samiei.org/</link>
+        <description>Ahmad Samiei blog</description>
+        {% for topic in topics %}
+            <item>
+                <title>{{ topic.title|raw }}</title>
+                <link>http://samiei.org/blog/{{ topic.name|raw }}.html</link>
+                <guid>http://samiei.org/blog/{{ topic.name|raw }}.html</guid>
+                <pubDate>{{ topic.date|date('D, d M Y') }}</pubDate>
+                <description>{{ topic.title|raw }}</description>
+            </item>
+        {% endfor %}
+    </channel>
+</rss>

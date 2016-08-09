@@ -1,0 +1,9 @@
+{% extends "master.twig" %}
+{% block content %}
+    <article class="post col-md-8 col-md-offset-2">
+        {{ content|raw }}
+    </article>
+{% endblock %}
+{% block footer %}
+    {% include 'blog_footer.twig' %}
+{% endblock %}

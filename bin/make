@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+
+require_once 'vendor/autoload.php';
+
+$twig = new Twig_Environment(new Twig_Loader_Filesystem('templates'));
+@mkdir('blog');
+
+$topics = collect(glob("markdown/*.md"))
+->map('getPostArrayFromFile')
+->sortByDesc('timestamp')
+->each(function($post) use ($twig) {
+    file_put_contents('blog/'.$post['name'].'.html', $twig->loadTemplate('post.twig')->render($post));
+});
+
+collect([
+    'index.twig' => 'index.html',
+    'blog.twig' => 'blog/index.html',
+    'sitemap.twig' => 'sitemap.xml',
+    'rss.twig' => 'rss.xml'
+])->each(function ($path, $template) use ($topics, $twig) {
+    file_put_contents($path, $twig->loadTemplate($template)->render(compact('topics')));
+});
+
+function getPostArrayFromFile($file)
+{
+    return [
+        'name' => basename($file, '.md'),
+        'content' => (new Parsedown)->text($content = file_get_contents($file)),
+        'title' => mb_convert_case(str_replace('-', ' ', basename($file, '.md')), MB_CASE_TITLE),
+        'date' =>  preg_match('/#### Posted (.*?)\n/s', $content, $matches) ? $matches[1] : '',
+        'timestamp' =>  strtotime($matches[1])
+    ];
+}

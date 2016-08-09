@@ -1,0 +1,10 @@
+/.idea
+/vendor
+blog/*.html
+composer.lock
+index.html
+sitemap.xml
+rss.xml
+*.css
+*.scssc
+*.min.css.map

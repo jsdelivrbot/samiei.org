@@ -27,8 +27,8 @@ function getPostArrayFromFile($file)
     return [
         'name' => basename($file, '.md'),
         'content' => (new Parsedown)->text($content = file_get_contents($file)),
-        'title' => mb_convert_case(str_replace('-', ' ', basename($file, '.md')), MB_CASE_TITLE),
-        'date' =>  preg_match('/#### Posted (.*?)\n/s', $content, $matches) ? $matches[1] : '',
-        'timestamp' =>  strtotime($matches[1])
+        'date' =>  preg_match('/#{4} Posted (.*?)\n/', $content, $dates) ? $dates[1] : '',
+        'timestamp' =>  strtotime($dates[1]),
+        'title' =>  preg_match('/#{1} (.*)/', strtok($content, "\n"), $heads) ? $heads[1] : '',
     ];
 }

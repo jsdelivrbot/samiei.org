@@ -8,3 +8,5 @@ rss.xml
 *.css
 *.scssc
 *.min.css.map
+*.bak
+*.md.bak

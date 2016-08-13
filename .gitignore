@@ -3,6 +3,7 @@
 blog/*.html
 composer.lock
 index.html
+about.html
 sitemap.xml
 rss.xml
 *.css

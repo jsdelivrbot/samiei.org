@@ -14,8 +14,8 @@ $topics = collect(glob("markdown/*.md"))
 });
 
 collect([
-    'index.twig' => 'index.html',
-    'blog.twig' => 'blog/index.html',
+    'about.twig' => 'about.html',
+    'blog.twig' => 'index.html',
     'sitemap.twig' => 'sitemap.xml',
     'rss.twig' => 'rss.xml'
 ])->each(function ($path, $template) use ($topics, $twig) {

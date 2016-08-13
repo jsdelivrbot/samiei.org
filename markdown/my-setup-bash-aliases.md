@@ -1,7 +1,7 @@
 # My Setup: Bash aliases
 #### Posted August 13, 2016
 
-A couple of years ago I was writing every day in my Persian blog. I stopped that blog and after that, I’ve been wanting to start blogging more frequent, and I'm not the only one that decides to blog more and then it never happens. Again another time I choose to write, I start by removing some old and outdated posts, and I decided to start with small and easy topics, and now you are reading my first try.
+A couple of years ago I was writing every day in my Persian blog. I stopped that blog and after that, I've been wanting to start blogging more frequent, and I'm not the only one that decides to blog more and then it never happens. Again another time I choose to write, I start by removing some old and outdated posts, and I decided to start with small and easy topics, and now you are reading my first try.
 
 Bash alias is an abbreviation or shortcut that helps you to avoid typing a long command sequence. So instead of typing `git log --graph --abbrev-commit --pretty=oneline -n 20` you can just type `gl`, much easier right?
 

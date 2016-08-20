@@ -1,5 +1,5 @@
 # Watch and runner to run tests
-#### Posted August 19, 2016
+#### Posted August 20, 2016
 
 When you are using TDD, it's very convenient to have a tool to run your tests continuously.
 If you are using an IDE it'll give you the proper way to run your tests very fast, also if you are using a text editor there is plenty of plugins allowing you to configure your command to run your test suites, but you will have less flexibility comparing to what IDEs can provide for you.

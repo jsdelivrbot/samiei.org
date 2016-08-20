@@ -69,7 +69,7 @@ alias mydump='mysqldump -u root -p'
 
 ## GIT
 
-And finally, the most wanted in my aliases are git aliases. I believe you'll like to use bash aliases just after seeing them.
+And last but not least, the most wanted in my aliases are git aliases. I believe you'll like to use bash aliases just after reading them.
 
 ```bash
 alias g='git'
@@ -96,3 +96,5 @@ alias undo='git reset HEAD^'
 alias amend='git commit --amend --no-edit'
 alias log='git log --graph --abbrev-commit --pretty=oneline -n 20'
 ```
+
+I hope you find it useful.
